@@ -25,20 +25,22 @@ public class Distancia {
     }
     public void calcularDistancia() {
         for (int j = 0; j < puntos.size(); j++) {
-            for (int k = j+1; k < puntos.size(); k++) {
+            for (int k = j + 1; k < puntos.size(); k++) {
                 double dx = puntos.get(j).getX() - puntos.get(k).getX();
                 double dy = puntos.get(j).getY() - puntos.get(k).getY();
                 double distanciapuntos = Math.sqrt(dx * dx + dy * dy);
                 distancias.add(distanciapuntos);
             }
         }
-        System.out.println("Distancias: "+distancias);
+        for (Double distance : distancias) {
+            System.out.println("Distancias: " + distance);
         }
+    }
     public void calcularDistanciaMenor() {
         double distanciaMenor=distancias.get(0);
-        for(int l=1; l<distancias.size();l++){
-        if(distanciaMenor>distancias.get(l)){
-            distanciaMenor=distancias.get(l);
+        for(Double distance1: distancias){
+        if(distanciaMenor>distance1){
+            distanciaMenor=distance1;
         }
     }
         System.out.println("La distancia Menor es: "+distanciaMenor);
